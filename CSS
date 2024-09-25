@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #87CEEB; /* Sky blue */
+}
+
+#game-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: #228B22; /* Grass */
+}
+
+#car {
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    background: red;
+    border-radius: 5px;
+    transition: transform 0.1s;
+}

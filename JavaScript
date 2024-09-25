@@ -1,0 +1,27 @@
+const car = document.getElementById('car');
+const gameContainer = document.getElementById('game-container');
+
+let position = { x: 0, y: 0 };
+const step = 10;
+
+document.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case 'ArrowUp':
+            position.y = Math.max(position.y - step, 0);
+            break;
+        case 'ArrowDown':
+            position.y = Math.min(position.y + step, gameContainer.clientHeight - car.clientHeight);
+            break;
+        case 'ArrowLeft':
+            position.x = Math.max(position.x - step, 0);
+            break;
+        case 'ArrowRight':
+            position.x = Math.min(position.x + step, gameContainer.clientWidth - car.clientWidth);
+            break;
+    }
+    updateCarPosition();
+});
+
+function updateCarPosition() {
+    car.style.transform = `translate(${position.x}px, ${position.y}px)`;
+}
